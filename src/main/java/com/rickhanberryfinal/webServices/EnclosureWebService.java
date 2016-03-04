@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
-public class EnclosureResource {
+public class EnclosureWebService {
 
 
     @Autowired

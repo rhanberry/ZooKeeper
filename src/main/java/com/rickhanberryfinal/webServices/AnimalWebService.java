@@ -21,7 +21,7 @@ import java.util.stream.StreamSupport;
  */
 @RestController
 @RequestMapping("/api")
-public class AnimalResource {
+public class AnimalWebService {
 
 
     @Autowired

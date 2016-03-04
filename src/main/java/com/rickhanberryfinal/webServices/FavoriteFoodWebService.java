@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
-public class FavoriteFoodResource {
+public class FavoriteFoodWebService {
 
     @Autowired
     private FavoriteFoodRepository favoriteFoodRepository;
