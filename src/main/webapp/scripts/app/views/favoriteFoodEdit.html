@@ -1,0 +1,48 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFavoriteFoodLabel">Create or edit Food</h4>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label class="control-label" for="field_favoriteFood">Favorite Food</label>
+            <input type="text" class="form-control" name="favoriteFood" id="field_favoriteFood"
+                    ng-model="favoriteFood.favoriteFood"
+                    required />
+            <div ng-show="editForm.favoriteFood.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.favoriteFood.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_category">Category</label>
+            <select class="form-control" name="category" ng-model="favoriteFood.category" id="field_category">
+                <option value="Meat">Meat</option>
+                <option value="Grains">Grains</option>
+                <option value="Nuts">Nuts</option>
+                <option value="Seed">Seed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="field_foodVendor">foodVendor</label>
+            <select class="form-control" id="field_foodVendor" name="foodVendor" ng-model="favoriteFood.foodVendor" ng-options="foodVendor as foodVendor.foodVendor for foodVendor in foodvendors track by foodVendor.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span>Save</span>
+        </button>
+    </div>
+</form>

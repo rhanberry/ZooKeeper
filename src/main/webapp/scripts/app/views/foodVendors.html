@@ -1,0 +1,36 @@
+<div>
+    <h1>Vendors</h1>
+    <div class="container-fluid">
+        <div class="row">
+                <button class="btn btn-block btn-success" ui-sref="foodVendor.new" >
+                    <span>
+                        Create new Vendor
+                    </span>
+                </button>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span>Vendor</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="foodVendor in foodVendors track by foodVendor.id">
+                    <td><a ui-sref="foodVendor.edit({id:foodVendor.id})">{{foodVendor.foodVendor}}</a></td>
+
+                    <td class="text-right">
+                            <button type="submit"
+                                    ui-sref="foodVendor.delete({id:foodVendor.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

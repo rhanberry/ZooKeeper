@@ -1,0 +1,91 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEnclosureLabel">Create or edit an Enclosure</h4>
+    </div>
+
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="control-label" for="field_enclosure">Enclosure</label>
+            <input type="text" class="form-control" name="enclosure" id="field_enclosure"
+                    ng-model="enclosure.enclosure"
+                    required />
+            <div ng-show="editForm.enclosure.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enclosure.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_numberOfAnimals">Number Of Animals</label>
+
+            <input type="number" class="form-control" name="numberOfAnimals" id="field_numberOfAnimals"
+                    ng-model="enclosure.numberOfAnimals"
+                    required />
+
+            <div ng-show="editForm.numberOfAnimals.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.numberOfAnimals.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.numberOfAnimals.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="field_feedingTime">Feeding Time</label>
+            <input type="text" class="form-control" name="feedingTime" id="field_feedingTime"
+                    ng-model="enclosure.feedingTime"
+                    required ng-pattern="/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/" />
+            <div ng-show="editForm.feedingTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.feedingTime.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.feedingTime.$error.pattern" translate-value-pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+                    This field should be a time of day (ex: 12:00).
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="field_condition">Condition</label>
+            <select class="form-control" name="condition" ng-model="enclosure.condition" id="field_condition" required>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Acceptable">Acceptable</option>
+                <option value="Poor">Poor</option>
+                <option value="Filthy">Filthy</option>
+                <option value="Criminal">Criminal</option>
+            </select>
+            <div ng-show="editForm.condition.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.condition.$error.required">
+                    Please select a condition.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_animal">animal</label>
+            <select class="form-control" id="field_animal" name="animal" ng-model="enclosure.animal" ng-options="animal as animal.commonName for animal in animals | orderBy:'id' track by animal.id">
+                <option value=""></option>
+            </select>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span>Save</span>
+        </button>
+    </div>
+</form>

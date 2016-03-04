@@ -1,0 +1,41 @@
+<div>
+    <h1>Favorite Foods</h1>
+    <div class="container-fluid">
+        <div class="row">
+                <button class="btn btn-block btn-success" ui-sref="favoriteFood.new" >
+                    <span>
+                       Create new Food
+                    </span>
+                </button>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span>Favorite Food</span></th>
+                    <th><span>Category</span></th>
+                    <th><span>Vendor</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="favoriteFood in favoriteFoods track by favoriteFood.id">
+                    <td><a ui-sref="favoriteFood.edit({id:favoriteFood.id})">{{favoriteFood.favoriteFood}}</a></td>
+                    <td translate="{{'zooApp.Category.' + favoriteFood.category}}">{{favoriteFood.category}}</td>
+                    <td>{{favoriteFood.foodVendor.foodVendor}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="favoriteFood.delete({id:favoriteFood.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div>
+    <h2>Enclosures</h2>
+    <div class="container-fluid">
+        <div class="row">
+                <button class="btn btn-block btn-success" ui-sref="enclosure.new" >
+                    <span>
+                       Create new Enclosure
+                    </span>
+                </button>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span>Enclosure</span></th>
+                    <th><span>Number Of Animals</span></th>
+                    <th><span>Feeding Time</span></th>
+                    <th><span>Condition</span></th>
+                    <th><span>Animal</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enclosure in enclosures track by enclosure.id">
+                    <td><a ui-sref="enclosure.edit({id:enclosure.id})">{{enclosure.enclosure}}</a></td>
+                    <td>{{enclosure.numberOfAnimals}}</td>
+                    <td>{{enclosure.feedingTime}}</td>
+                    <td translate="{{'zooApp.Condition.' + enclosure.condition}}">{{enclosure.condition}}</td>
+                    <td>{{enclosure.animal.commonName}}</td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        ui-sref="enclosure.delete({id:enclosure.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                    <span class="hidden-xs"></span>
+                                </button>
+                            </div>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

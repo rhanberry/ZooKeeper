@@ -1,0 +1,44 @@
+<div>
+    <h2>Animals</h2>
+    <div class="container-fluid">
+        <div class="row">
+                <button class="btn btn-block btn-success" ui-sref="animal.new" >
+                    <span>
+                        Create new Animal
+                    </span>
+                </button>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><span>Common Name</span></th>
+                    <th><span>Scientific Name</span></th>
+                    <th><span>Informational Link</span></th>
+                    <th><span>favorite Food</span></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="animal in animals track by animal.id">
+                    <td><a ui-sref="animal.edit({id:animal.id})">{{animal.commonName}}</a></td>
+                    <td>{{animal.scientificName}}</td>
+                    <td>{{animal.information}}</td>
+                    <td>{{animal.favoriteFood.favoriteFood}}</td>
+                        <td class="text-right">
+                            <div class="btn-group flex-btn-group-container">
+                                <button type="submit"
+                                        ui-sref="animal.delete({id:animal.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                    <span class="hidden-xs"></span>
+                                </button>
+                            </div>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

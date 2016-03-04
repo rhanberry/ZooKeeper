@@ -1,0 +1,31 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFoodVendorLabel">Create or edit a Vendor</h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group">
+            <label class="control-label" for="field_foodVendor">Food Vendor</label>
+            <input type="text" class="form-control" name="foodVendor" id="field_foodVendor"
+                    ng-model="foodVendor.foodVendor"
+                    required />
+            <div ng-show="editForm.foodVendor.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.foodVendor.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span>Save</span>
+        </button>
+    </div>
+</form>

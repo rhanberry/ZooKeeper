@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>zoo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/main.css">
+
+    </head>
+    <body ng-app="zooApp">
+
+    <div ui-view="navbar" ng-cloak=""></div>
+    <div class="container">
+        <div class="jumbotron" ui-view="content"></div>
+        <div class="footer">
+            ZOOKPR
+        </div>
+    </div>
+
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+
+
+
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/controllers/navbar.controller.js"></script>
+    <script src="scripts/app/routes/entity.js"></script>
+    <script src="scripts/app/routes/main.js"></script>
+    <script src="scripts/app/controllers/main.controller.js"></script>
+    <script src="scripts/app/routes/foodVendor.js"></script>
+    <script src="scripts/app/controllers/foodVendorCtrl.js"></script>
+    <script src="scripts/app/controllers/foodVendorEditCtrl.js"></script>
+    <script src="scripts/app/controllers/foodVendorDeleteCtrl.js"></script>
+    <script src="scripts/app/services/foodVendor.service.js"></script>
+    <script src="scripts/app/routes/favoriteFood.js"></script>
+    <script src="scripts/app/controllers/favoriteFoodCtrl.js"></script>
+    <script src="scripts/app/controllers/favoriteFoodEditCtrl.js"></script>
+    <script src="scripts/app/controllers/favoriteFoodDeleteCtrl.js"></script>
+    <script src="scripts/app/services/favoriteFood.service.js"></script>
+    <script src="scripts/app/routes/animal.js"></script>
+    <script src="scripts/app/controllers/animalCtrl.js"></script>
+    <script src="scripts/app/controllers/animalEditCtrl.js"></script>
+    <script src="scripts/app/controllers/animalDeleteCtrl.js"></script>
+    <script src="scripts/app/services/animal.service.js"></script>
+    <script src="scripts/app/routes/enclosure.js"></script>
+    <script src="scripts/app/controllers/enclosureCtrl.js"></script>
+    <script src="scripts/app/controllers/enclosureEditCtrl.js"></script>
+    <script src="scripts/app/controllers/enclosureDeleteCtrl.js"></script>
+    <script src="scripts/app/services/enclosure.service.js"></script>
+</body>
+</html>
