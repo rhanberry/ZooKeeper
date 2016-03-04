@@ -1,0 +1,67 @@
+#COMPREHENSIVE GITIGNORE, LAST TIME I LEFT THIS OFF AND IT ALMOST RUINED ME
+# node
+/node/**
+/node_modules/**
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+/bin/**
+/tmp/**
+/tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/**
+.loadpath
+/src/main/resources/rebel.xml
+*.launch
+
+# Intellij
+.idea/**
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+# Maven
+/log/**
+/target/**
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.db
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+#OSX
+.DS_Store
+.svn
+
+#THUMBNAILS
+._*
+
+#DIRECTORIES
+/build/**
+/bin/**
+/spring_loaded/**
+/deploy/**
+
+#OTHER FILES THAT MIGHT RUIN YOUR LIFE
+*.log
+*.class
+*.*~
+*~
+.merge_file*
+
+!.mvn/wrapper/maven-wrapper.jar
+/.apt_generated/
