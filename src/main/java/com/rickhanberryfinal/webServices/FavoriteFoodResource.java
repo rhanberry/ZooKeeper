@@ -21,50 +21,34 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class FavoriteFoodResource {
 
-
     @Autowired
     private FavoriteFoodRepository favoriteFoodRepository;
     
-    /**
-     * Create new Food.
-     */
+
     @RequestMapping(value = "/favoriteFoods", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public FavoriteFood createFavoriteFood(@Valid @RequestBody FavoriteFood favoriteFood){
         return favoriteFoodRepository.saveAndFlush(favoriteFood);
-
     }
 
 
-    /**
-     * Update Food.
-     */
     @RequestMapping(value = "/favoriteFoods", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<FavoriteFood> updateFavoriteFood(@Valid @RequestBody FavoriteFood favoriteFood)  {
-
         FavoriteFood result = favoriteFoodRepository.save(favoriteFood);
         return ResponseEntity.ok().body(result);
     }
 
-    /**
-     * get all Food.
-     */
     @RequestMapping(value = "/favoriteFoods", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<FavoriteFood> getAllFavoriteFoods() {
         return favoriteFoodRepository.findAll();
             }
 
-    /**
-     * get single food
-     */
+
     @RequestMapping(value = "/favoriteFoods/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public FavoriteFood getFavoriteFood(@PathVariable Long id) {
        return favoriteFoodRepository.findOne(id);
-
     }
 
-    /**
-     * delete Foods
-     */
+
     @RequestMapping(value = "/favoriteFoods/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> deleteFavoriteFood(@PathVariable Long id) {
         favoriteFoodRepository.delete(id);

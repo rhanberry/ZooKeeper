@@ -51,9 +51,6 @@ public class EnclosureResource {
 
     }
 
-    /**
-     * delete an enclosure
-     */
     @RequestMapping(value = "/enclosures/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> deleteEnclosure(@PathVariable Long id) {
         enclosureRepository.delete(id);
